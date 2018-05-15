@@ -2,14 +2,21 @@ import React from 'react';
 import {Button, StatusBar, Text, View, StyleSheet} from 'react-native';
 import I18n from '../i18n/i18n';
 
-class Home extends React.Component{
+class Home extends React.Component {
 
-    static navigationOptions = {
-        title: I18n.t('home'),
+    static navigationOptions = ({navigation}) => {
+        return {
+            title: I18n.t('poetry'),
+            headerRight: <Text
+                style={{color: '#fff', marginRight: 20, fontSize: 20}}
+                onPress={() => {
+                    navigation.navigate('Example')
+                }}>Ad</Text>
+        }
     };
 
-    render(){
-        return(
+    render() {
+        return (
             <View style={styles.container}>
                 <StatusBar
                     backgroundColor="chocolate"
@@ -23,7 +30,7 @@ class Home extends React.Component{
                         <Button
                             title={I18n.t('read')}
                             color="coral"
-                            onPress={()=>{
+                            onPress={() => {
                                 this.props.navigation.navigate('Reader')
                             }}
                         />
@@ -37,23 +44,23 @@ class Home extends React.Component{
 
 const styles = StyleSheet.create({
     container: {
-        margin:20,
-        marginTop:'25%'
+        margin: 20,
+        marginTop: '25%'
     },
     title: {
-        fontSize:20,
+        fontSize: 20,
         fontWeight: 'bold',
-        margin:10,
-        alignSelf:'center'
+        margin: 10,
+        alignSelf: 'center'
     },
-    intro:{
-        margin:10,
-        alignSelf:'center'
+    intro: {
+        margin: 10,
+        alignSelf: 'center'
     },
-    btn:{
-        width:'30%',
-        alignSelf:'center',
-        marginTop:30
+    btn: {
+        width: '30%',
+        alignSelf: 'center',
+        marginTop: 30
     }
 });
 

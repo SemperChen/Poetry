@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, Text} from 'react-native';
 import I18n from '../i18n/i18n';
 import {connect} from 'react-redux';
 import {requestContent} from '../actions/Content';
@@ -27,9 +27,7 @@ class Reader extends React.Component{
             }
         }
         return(
-            <ScrollView
-                contentContainerStyle={styles.container}
-            >
+            <ScrollView>
                 <Text style={styles.content}>{this.content}</Text>
             </ScrollView>
         )
@@ -37,9 +35,6 @@ class Reader extends React.Component{
 }
 
 const styles = StyleSheet.create({
-    container: {
-
-    },
     content: {
         padding:40,
         fontSize:20,

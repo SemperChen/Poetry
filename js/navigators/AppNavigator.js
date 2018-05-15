@@ -5,6 +5,7 @@ import {Easing, Animated} from 'react-native';
 import Home from '../components/Home';
 import Splash from '../components/Splash';
 import Reader from '../components/Reader';
+import GoogleAdmobExample from '../components/GoogleAdmobExample';
 
 
 /**
@@ -13,7 +14,8 @@ import Reader from '../components/Reader';
 const AppNavigator = createStackNavigator({
     Splash: {screen: Splash},
     Home: {screen: Home},
-    Reader:{screen: Reader}
+    Reader:{screen: Reader},
+    Example:{screen:GoogleAdmobExample,navigationOptions:{title:'GoogleAdmobExample'}}
 }, {
     initialRouteName: 'Splash',
     /* The header config from HomeScreen is now here */

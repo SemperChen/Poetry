@@ -16,10 +16,10 @@ class Splash extends React.Component{
 
     componentDidMount(){
         getLanguages().then(languages => {
-            if(languages==='en'){
-                global.globalLanguages = 'en'
-            }else {
+            if(languages[0] === 'zh-CN' || languages[0] === 'zh-Hans-US' || languages[0] === 'zh-Hans-CN'){
                 global.globalLanguages = 'zh'
+            }else {
+                global.globalLanguages = 'en'
             }
         });
         this.timer=setTimeout(()=>{
