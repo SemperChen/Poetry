@@ -68,3 +68,9 @@
 -dontwarn java.nio.file.*
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
 -dontwarn okio.**
+
+# -keep class com.AlexanderZaytsev.RNI18n.** { *; }
+-dontwarn com.AlexanderZaytsev.RNI18n.**
+
+# -keep class com.sbugert.rnadmob.** { *; }
+-dontwarn com.sbugert.rnadmob.**
