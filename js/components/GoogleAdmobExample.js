@@ -14,7 +14,7 @@ class GoogleAdmobExample extends React.Component{
 
     componentDidMount(){
         // AdMobRewarded.setTestDevices([AdMobRewarded.simulatorId]);
-        AdMobRewarded.setAdUnitID('ca-app-pub-4533308396777454/3574680139');
+        AdMobRewarded.setAdUnitID('ca-app-pub-4533308396777454/5961557364');
 
         AdMobRewarded.addEventListener('rewarded',
             (reward) => console.log('AdMobRewarded => rewarded', reward)
@@ -43,8 +43,8 @@ class GoogleAdmobExample extends React.Component{
 
         AdMobRewarded.requestAd().catch(error => console.warn(error));
 
-        AdMobInterstitial.setTestDevices([AdMobInterstitial.simulatorId]);
-        AdMobInterstitial.setAdUnitID('ca-app-pub-4533308396777454/3942222086');
+        // AdMobInterstitial.setTestDevices([AdMobInterstitial.simulatorId]);
+        AdMobInterstitial.setAdUnitID('ca-app-pub-4533308396777454/1534516750');
 
         AdMobInterstitial.addEventListener('adLoaded',
             () => console.log('AdMobInterstitial adLoaded')
@@ -79,7 +79,7 @@ class GoogleAdmobExample extends React.Component{
                 <View style={styles.banner}>
                     <AdMobBanner
                         adSize="banner"
-                        adUnitID="ca-app-pub-4533308396777454/1499181137"
+                        adUnitID="ca-app-pub-4533308396777454/5458569452"
                     />
                 </View>
                 <View style={styles.btn}>

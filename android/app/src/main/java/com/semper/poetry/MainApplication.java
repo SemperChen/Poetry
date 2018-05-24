@@ -1,4 +1,4 @@
-package com.poetry;
+package com.semper.poetry;
 
 import android.app.Application;
 
