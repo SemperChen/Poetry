@@ -758,6 +758,10 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 38X6T48425;
+						ProvisioningStyle = Manual;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -1322,8 +1326,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 38X6T48425;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1340,7 +1347,10 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjdyq525.www;
 				PRODUCT_NAME = Poetry;
+				PROVISIONING_PROFILE = "1c74362b-23e0-48fd-a4bd-d3b587efc59b";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_dis;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1349,7 +1359,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 38X6T48425;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1366,7 +1379,10 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjdyq525.www;
 				PRODUCT_NAME = Poetry;
+				PROVISIONING_PROFILE = "1c74362b-23e0-48fd-a4bd-d3b587efc59b";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_dis;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
