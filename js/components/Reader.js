@@ -3,6 +3,7 @@ import {ScrollView, StyleSheet, Text} from 'react-native';
 import I18n from '../i18n/i18n';
 import {connect} from 'react-redux';
 import {requestContent} from '../actions/Content';
+import {AdMobInterstitial} from 'react-native-admob';
 
 class Reader extends React.Component{
 
@@ -13,6 +14,13 @@ class Reader extends React.Component{
     static navigationOptions = {
         title: I18n.t('starrySky'),
     };
+    showInterstitial() {
+        AdMobInterstitial.showAd().catch(error => console.warn(error));
+    }
+
+    componentDidMount(){
+        this.showInterstitial()
+    }
 
     componentWillMount() {
         this.props.dispatch(requestContent());

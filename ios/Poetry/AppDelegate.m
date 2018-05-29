@@ -29,7 +29,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
-  [GADMobileAds configureWithApplicationID:@"ca-app-pub-3940256099942544~1458002511"];
+  [GADMobileAds configureWithApplicationID:@"ca-app-pub-4533308396777454~5692483104"];
   return YES;
 }
 

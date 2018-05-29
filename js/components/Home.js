@@ -1,19 +1,9 @@
 import React from 'react';
 import {Button, StatusBar, Text, View, StyleSheet} from 'react-native';
 import I18n from '../i18n/i18n';
+import {AdMobBanner} from 'react-native-admob';
 
 class Home extends React.Component {
-
-    static navigationOptions = ({navigation}) => {
-        return {
-            title: I18n.t('poetry'),
-            headerRight: <Text
-                style={{color: '#fff', marginRight: 20, fontSize: 20}}
-                onPress={() => {
-                    navigation.navigate('Example')
-                }}>Ad</Text>
-        }
-    };
 
     render() {
         return (
@@ -22,6 +12,12 @@ class Home extends React.Component {
                     backgroundColor="chocolate"
                     barStyle="light-content"
                 />
+                <View style={styles.banner}>
+                    <AdMobBanner
+                        adSize="banner"
+                        adUnitID="ca-app-pub-4533308396777454/7723325046"
+                    />
+                </View>
                 <View>
                     <Text style={styles.title}>{I18n.t('starrySky')}</Text>
                     <Text style={styles.intro}>{I18n.t('author')}</Text>
@@ -45,7 +41,11 @@ class Home extends React.Component {
 const styles = StyleSheet.create({
     container: {
         margin: 20,
-        marginTop: '25%'
+    },
+    banner: {
+        alignSelf:'center',
+        margin:10,
+        marginBottom: '10%'
     },
     title: {
         fontSize: 20,

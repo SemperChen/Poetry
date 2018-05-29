@@ -1,27 +1,69 @@
 import React from 'react';
-import {createStackNavigator} from 'react-navigation';
+import {createBottomTabNavigator, createStackNavigator} from 'react-navigation';
 import StackViewStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator';
 import {Easing, Animated} from 'react-native';
 import Home from '../components/Home';
 import Splash from '../components/Splash';
 import Reader from '../components/Reader';
-import GoogleAdmobExample from '../components/GoogleAdmobExample';
+// import GoogleAdmobExample from '../components/GoogleAdmobExample';
+import Explore from '../components/Explore';
+import I18n from '../i18n/i18n';
+import WebReadPage from '../components/WebReadPage';
 
+const TabContainer = createBottomTabNavigator(
+    {
+        Home: {screen: Home,navigationOptions:{tabBarLabel:I18n.t('home')}},
+        Explore: {screen: Explore,navigationOptions:{tabBarLabel:I18n.t('explore')}}
+
+    },
+    {
+        animationEnabled: false,
+        swipeEnabled: false,
+        lazy: true,
+        tabBarPosition: 'bottom',
+        tabBarOptions: {
+            activeTintColor: 'chocolate',
+            inactiveTintColor: 'coral',
+            showIcon: false,
+            showLabel: true,
+            labelStyle: {
+                marginTop: 0,
+                fontSize: 14,
+            },
+            style: {
+                backgroundColor: '#fff',
+            },
+            indicatorStyle: {
+                opacity: 0,
+            },
+            iconStyle: {},
+            tabStyle: {
+                height: 48,
+                margin: 0,
+                padding: 0,
+                alignItems: 'center',
+                justifyContent: 'center'
+            }
+        }
+    }
+);
 
 /**
  * 路由配置中心
  */
 const AppNavigator = createStackNavigator({
     Splash: {screen: Splash},
-    Home: {screen: Home},
+    Tab: {screen: TabContainer,navigationOptions: {headerTitle: I18n.t('poetry'), headerTintColor: '#fff'}},
     Reader:{screen: Reader},
-    Example:{screen:GoogleAdmobExample,navigationOptions:{title:'GoogleAdmobExample'}}
+    WebRead:{screen:WebReadPage},
+    // Example:{screen:GoogleAdmobExample,navigationOptions:{title:'GoogleAdmobExample'}}
 }, {
     initialRouteName: 'Splash',
     /* The header config from HomeScreen is now here */
     navigationOptions: {
         headerStyle: {
             backgroundColor: 'coral',
+            elevation: 0
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
