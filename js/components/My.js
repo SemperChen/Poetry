@@ -1,38 +1,56 @@
 import React from 'react';
-import {Dimensions, FlatList, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Button, StatusBar, Text, View, StyleSheet, FlatList, Image, Dimensions, TouchableOpacity} from 'react-native';
+import I18n from '../i18n/i18n';
+import {AdMobBanner} from 'react-native-admob';
 import {connect} from 'react-redux';
 import {requestContent} from '../actions/content';
 
 const WIDTH = Dimensions.get('window').width;
 
-class Home extends React.Component {
+class My extends React.Component {
 
     componentDidMount() {
+    }
+
+    _requestContent(){
         this.props.dispatch(requestContent());
     }
 
     _navDetail = (item) => {
-        this.props.navigation.navigate('Detail', {poetry: item})
+        this.props.navigation.navigate('Detail',{poetry:item})
     };
 
     render() {
+        console.log('this.props.myData,globalMyPoems',this.props.myData,globalMyPoems)
         return (
-            <View style={styles.container}>
+            <View>
                 <StatusBar
                     backgroundColor="chocolate"
                     barStyle="light-content"
                 />
-
                 <FlatList
                     showsVerticalScrollIndicator={false}
-                    data={this.props.contentData
+                    contentContainerStyle={styles.list}
+                    data={this.props.myData
                         ?
-                        globalLanguages === 'en' ? this.props.contentData.en : this.props.contentData.zh
+                        this.props.myData
                         :
                         null}
                     renderItem={this._renderItem}
                     keyExtractor={(item: object, index: number) => item.title}
+                    ListHeaderComponent={()=>{
+                        return(
+                            <Button
+                                title={I18n.t('writePoem')}
+                                color="coral"
+                                onPress={()=>{
+                                    this.props.navigation.navigate('Add',{requestContent:this._requestContent})
+                                }}
+                            />
+                        )
+                    }}
                 />
+
             </View>
         )
     }
@@ -41,7 +59,7 @@ class Home extends React.Component {
         return (
             <TouchableOpacity
                 style={styles.item}
-                onPress={() => {
+                onPress={()=>{
                     this._navDetail(item)
                 }}
             >
@@ -58,7 +76,7 @@ class Home extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
+    list: {
         margin: 15,
     },
     banner: {
@@ -90,13 +108,13 @@ const styles = StyleSheet.create({
         marginBottom: 3
     },
     author: {
-        color: '#aeaeae'
+        color: '#494949'
     }
 });
 
 function mapStateToProps(state) {
-    const {contentData, isFetching} = state.content;
-    return {contentData, isFetching}
+    const {myData, isFetching} = state.my;
+    return {myData, isFetching}
 }
 
-export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps)(My)

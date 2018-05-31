@@ -1,2 +1,5 @@
 export const REQUEST_CONTENT = 'REQUEST_CONTENT';
 export const RECEIVE_CONTENT = 'RECEIVE_CONTENT';
+
+export const REQUEST_MY = 'REQUEST_MY';
+export const RECEIVE_MY = 'RECEIVE_MY';

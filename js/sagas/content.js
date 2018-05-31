@@ -1,6 +1,6 @@
 import {REQUEST_CONTENT} from "../constants/ActionTypes";
 import {call, cancel, fork, put, take} from "redux-saga/effects";
-import {receiveContent} from '../actions/Content';
+import {receiveContent} from '../actions/content';
 import {fetchNetData} from '../utils/HttpUtil';
 
 export const fetchContent = function* fetchContent(contentUrl) {

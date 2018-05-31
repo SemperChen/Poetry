@@ -2,10 +2,7 @@
 export default {
     home:'主页',
     poetry:'诗歌',
-    starrySky:'仰望星空',
     read:'阅读',
-    intro:'《仰望星空》是2007年温家宝创作的一首诗。',
-    author:'——温家宝',
     explore:'发现',
     heights:'高度',
     panther:'豹',
@@ -14,5 +11,16 @@ export default {
     reminder:'提示',
     reminderContent:'是否观看广告阅读更多诗歌？',
     cancel:'取消',
-    watch:'观看'
+    watch:'观看',
+    detail:'详细',
+    writePoem:'自己写诗',
+    my:'我的',
+    addPoetry:'添加诗歌',
+    title:'标题',
+    author:'作者',
+    intro:'介绍',
+    content:'内容',
+    setting:'设置',
+    fontSize:'字体大小',
+    backgroundColor:'背景颜色'
 };

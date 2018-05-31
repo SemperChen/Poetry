@@ -2,10 +2,7 @@
 export default {
     home:'Home',
     poetry:'Poetry',
-    starrySky:'I look up at the starry sky',
     read:'Read',
-    intro:'I look Up at the Starry Sky is a poem by Wen Jiabao in 2007',
-    author:'--Wen Jiabao',
     explore:'Explore',
     heights:'Heights',
     panther:'The Panther',
@@ -14,5 +11,17 @@ export default {
     reminder:'Reminder',
     reminderContent:'Do you watch advertisements to read more poems?',
     cancel:'Cancel',
-    watch:'Watch'
+    watch:'Watch',
+    detail:'Detail',
+    writePoem:'Write your own poem',
+    my:'My',
+    addPoetry:'Add Poetry',
+    title:"Title",
+    author:'Author',
+    imgUrl:'Img Url',
+    intro:'Intro',
+    content:'Content',
+    setting:'Setting',
+    fontSize:'Font Size',
+    backgroundColor:'Background Color'
 };

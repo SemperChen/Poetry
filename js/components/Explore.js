@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import {ScrollView, StyleSheet, Text, TouchableOpacity,Alert} from 'react-native';
+import {ScrollView, StyleSheet, Text, TouchableOpacity, Alert} from 'react-native';
 import I18n from '../i18n/i18n';
 import {AdMobRewarded} from 'react-native-admob';
 

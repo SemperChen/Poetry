@@ -1,42 +1,79 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text} from 'react-native';
+import {ScrollView, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import I18n from '../i18n/i18n';
-import {connect} from 'react-redux';
-import {requestContent} from '../actions/Content';
 import {AdMobInterstitial} from 'react-native-admob';
+global.globalFontColor = '#fff';
+global.globalFontSize = 22;
+class Reader extends React.Component {
 
-class Reader extends React.Component{
-
-    constructor(){
-        super()
+    constructor() {
+        super();
+        this.state = {
+            fontSize: globalFontSize,
+            color: globalFontColor
+        }
     }
 
-    static navigationOptions = {
-        title: I18n.t('starrySky'),
+    static navigationOptions = ({navigation}) => {
+        let data = navigation.state.params.data;
+        return {
+            headerTitle: navigation.state.params.poetry.title,
+            // headerStyle: {elevation: 0},
+            headerTintColor: '#fff',
+            headerRight: (
+                <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate('Setting', {data: data})
+                    }}
+                >
+                    <Text style={{color: '#fff', padding: 10}}>{I18n.t('setting')}</Text>
+                </TouchableOpacity>
+            )
+        }
     };
+
     showInterstitial() {
         AdMobInterstitial.showAd().catch(error => console.warn(error));
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.showInterstitial()
     }
 
     componentWillMount() {
-        this.props.dispatch(requestContent());
+        this._setParams();
+        this.poetry = this.props.navigation.state.params.poetry;
     }
 
-    render(){
-        if(this.props.contentData){
-            if(globalLanguages==='en'){
-                this.content = this.props.contentData.en
-            }else {
-                this.content = this.props.contentData.zh
+    _setParams = () => {
+        this.props.navigation.setParams({
+            data: {
+                setColor: this.setColor,
+                setFontSize: this.setFontSize
             }
-        }
-        return(
-            <ScrollView>
-                <Text style={styles.content}>{this.content}</Text>
+        });
+    };
+
+    setColor = (color) => {
+        this.setState({
+            color
+        });
+        this._setParams();
+        global.globalFontColor = color;
+    };
+
+    setFontSize = (fontSize) => {
+        this.setState({
+            fontSize
+        });
+        this._setParams();
+        global.globalFontSize = fontSize;
+    };
+
+    render() {
+        return (
+            <ScrollView contentContainerStyle={{backgroundColor: this.state.color}}>
+                <Text style={[styles.content, {fontSize: this.state.fontSize}]}>{this.poetry.content}</Text>
             </ScrollView>
         )
     }
@@ -44,16 +81,10 @@ class Reader extends React.Component{
 
 const styles = StyleSheet.create({
     content: {
-        padding:40,
-        fontSize:20,
-        lineHeight:40,
-        alignSelf:'center'
+        padding: 40,
+        lineHeight: 40,
+        alignSelf: 'center'
     }
 });
 
-function mapStateToProps(state) {
-    const {contentData, isFetching} = state.content;
-    return {contentData, isFetching}
-}
-
-export default connect(mapStateToProps)(Reader)
+export default Reader

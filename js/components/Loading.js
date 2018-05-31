@@ -3,6 +3,7 @@
  */
 import React from "react";
 import {ActivityIndicator, View} from "react-native";
+import PropTypes from 'prop-types';
 
 class Loading extends React.Component {
     constructor() {
@@ -23,5 +24,10 @@ class Loading extends React.Component {
         )
     }
 }
+
+Loading.propTypes = {
+    animating:PropTypes.bool,
+    size:PropTypes.string
+};
 
 export default Loading;

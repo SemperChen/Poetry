@@ -9,12 +9,16 @@ import Reader from '../components/Reader';
 import Explore from '../components/Explore';
 import I18n from '../i18n/i18n';
 import WebReadPage from '../components/WebReadPage';
+import Detail from '../components/Detail';
+import Me from '../components/My';
+import AddPoetry from '../components/AddPoetry';
+import Setting from '../components/Setting';
 
 const TabContainer = createBottomTabNavigator(
     {
         Home: {screen: Home,navigationOptions:{tabBarLabel:I18n.t('home')}},
-        Explore: {screen: Explore,navigationOptions:{tabBarLabel:I18n.t('explore')}}
-
+        Explore: {screen: Explore,navigationOptions:{tabBarLabel:I18n.t('explore')}},
+        Me: {screen: Me,navigationOptions:{tabBarLabel:I18n.t('my')}}
     },
     {
         animationEnabled: false,
@@ -56,6 +60,9 @@ const AppNavigator = createStackNavigator({
     Tab: {screen: TabContainer,navigationOptions: {headerTitle: I18n.t('poetry'), headerTintColor: '#fff'}},
     Reader:{screen: Reader},
     WebRead:{screen:WebReadPage},
+    Detail: {screen: Detail},
+    Add: {screen: AddPoetry,navigationOptions: {headerTitle: I18n.t('addPoetry'), headerTintColor: '#fff'}},
+    Setting: {screen: Setting,navigationOptions: {headerTitle: I18n.t('setting'), headerTintColor: '#fff'}},
     // Example:{screen:GoogleAdmobExample,navigationOptions:{title:'GoogleAdmobExample'}}
 }, {
     initialRouteName: 'Splash',
