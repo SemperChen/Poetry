@@ -17,6 +17,7 @@ class AddPoetry extends React.Component {
                         onChangeText={(title) => {
                             this.title = title
                         }}
+                        returnKeyType="next"
                     />
                     <TextInput
                         style={{margin: 10}}
@@ -26,6 +27,7 @@ class AddPoetry extends React.Component {
                         onChangeText={(author) => {
                             this.author = author
                         }}
+                        returnKeyType="next"
                     />
                     <TextInput
                         style={{margin: 10}}

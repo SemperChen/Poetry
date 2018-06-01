@@ -24,8 +24,8 @@ class Setting extends React.Component{
                         step={1}
                         maximumValue={28}
                         style={styles.slider}
-                        maximumTrackTintColor="deeppink"
-                        minimumTrackTintColor="gainsboro"
+                        maximumTrackTintColor="gainsboro"
+                        minimumTrackTintColor="deeppink"
                         thumbTintColor="deeppink"/>
                 </View>
 

@@ -27,7 +27,8 @@ class Detail extends React.Component {
                 <View style={styles.banner}>
                     <AdMobBanner
                         adSize="banner"
-                        adUnitID="ca-app-pub-4533308396777454/7723325046"
+                        // adUnitID="ca-app-pub-4533308396777454/7723325046"//ios
+                        adUnitID="ca-app-pub-4533308396777454/5458569452"//android
                     />
                 </View>
                 <View>
