@@ -4,7 +4,8 @@ import {connect} from 'react-redux';
 import AppNavigator from './navigators/AppNavigator';
 import {AppRegistry, BackHandler, Platform, ToastAndroid} from "react-native";
 import {NavigationActions} from 'react-navigation';
-import {addListener} from './utils/redux';
+import {navigationPropConstructor} from './utils/redux';
+import {initializeListeners} from "react-navigation-redux-helpers";
 
 
 class AppWithNavigationState extends Component {
@@ -14,6 +15,7 @@ class AppWithNavigationState extends Component {
     }
 
     componentDidMount() {
+        initializeListeners('root', this.props.nav);
     }
 
    /* shouldComponentUpdate(nextProps) {
@@ -33,7 +35,7 @@ class AppWithNavigationState extends Component {
     }
 
     onBackAndroid = () => {
-        if (this.currentRouteName === 'Home') {
+        if (this.index === 0) {
             if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
                 AppRegistry.unmountApplicationComponentAtRootTag(1);
                 return false;
@@ -48,14 +50,12 @@ class AppWithNavigationState extends Component {
 
     render() {
         const {dispatch, nav} = this.props;
-        this.currentRouteName = nav.routes[nav.index].routeName;
+        this.index = nav.index;
+        // this.currentRouteName = nav.routes[nav.index].routeName;
+        const navigation = navigationPropConstructor(dispatch, nav);
         return (
             <AppNavigator
-                navigation={{
-                dispatch: dispatch,
-                state: nav,
-                addListener,
-            }}
+                navigation={navigation}
             />
         );
     }
