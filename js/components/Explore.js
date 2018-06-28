@@ -73,7 +73,11 @@ class Explore extends React.Component {
                 <TouchableOpacity
                     style={[styles.btn, {marginTop: 5}]}
                     onPress={() => {
-                        this.showIsReadMorePoetry()
+                        // this.showIsReadMorePoetry()
+                        this.props.navigation.navigate('WebRead', {
+                            name: I18n.t('deceived'),
+                            url: 'https://www.zybang.com/question/173eb8d56ed287b407c412ba6c960df9.html'
+                        })
                     }}
                 >
                     <Text>{I18n.t('more')}</Text>

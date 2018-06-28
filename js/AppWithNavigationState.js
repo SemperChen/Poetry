@@ -6,6 +6,7 @@ import {AppRegistry, BackHandler, Platform, ToastAndroid} from "react-native";
 import {NavigationActions} from 'react-navigation';
 import {navigationPropConstructor} from './utils/redux';
 import {initializeListeners} from "react-navigation-redux-helpers";
+import RNExitApp from 'react-native-exit-app';
 
 
 class AppWithNavigationState extends Component {
@@ -37,7 +38,8 @@ class AppWithNavigationState extends Component {
     onBackAndroid = () => {
         if (this.index === 0) {
             if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
-                AppRegistry.unmountApplicationComponentAtRootTag(1);
+                RNExitApp.exitApp();
+                // AppRegistry.unmountApplicationComponentAtRootTag(1);
                 return false;
             }
             this.lastBackPressed = Date.now();

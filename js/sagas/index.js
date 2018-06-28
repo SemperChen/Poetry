@@ -1,9 +1,10 @@
-import {fork} from "redux-saga/effects";
-import {watchLastContent} from './content';
-import {watchLastMy} from './my';
+import {takeLatest} from "redux-saga/effects";
+import {fetchContent} from './content';
+import {fetchMy} from './my';
+import {REQUEST_CONTENT, REQUEST_MY} from '../constants/ActionTypes';
 
 const rootSaga = function* root() {
-    yield fork(watchLastContent);
-    yield fork(watchLastMy);
+    yield takeLatest(REQUEST_CONTENT,fetchContent,[]);
+    yield takeLatest(REQUEST_MY,fetchMy);
 };
 export default rootSaga;
