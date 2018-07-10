@@ -1,11 +1,10 @@
 import React from 'react';
 import {createBottomTabNavigator, createStackNavigator} from 'react-navigation';
-import StackViewStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator';
+// import StackViewStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator';
 import {Easing, Animated} from 'react-native';
 import Home from '../components/Home';
 import Splash from '../components/Splash';
 import Reader from '../components/Reader';
-// import GoogleAdmobExample from '../components/GoogleAdmobExample';
 import Explore from '../components/Explore';
 import I18n from '../i18n/i18n';
 import WebReadPage from '../components/WebReadPage';

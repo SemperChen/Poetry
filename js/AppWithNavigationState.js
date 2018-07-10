@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import AppNavigator from './navigators/AppNavigator';
-import {AppRegistry, BackHandler, Platform, ToastAndroid} from "react-native";
+import {BackHandler, Platform, ToastAndroid} from "react-native";
 import {NavigationActions} from 'react-navigation';
 import {navigationPropConstructor} from './utils/redux';
-import {initializeListeners} from "react-navigation-redux-helpers";
+import {initializeListeners} from 'react-navigation-redux-helpers/src/middleware';
 import RNExitApp from 'react-native-exit-app';
-
 
 class AppWithNavigationState extends Component {
 
@@ -18,10 +17,6 @@ class AppWithNavigationState extends Component {
     componentDidMount() {
         initializeListeners('root', this.props.nav);
     }
-
-   /* shouldComponentUpdate(nextProps) {
-        return true
-    }*/
 
     componentWillMount() {
         if (Platform.OS === 'android') {
@@ -54,10 +49,14 @@ class AppWithNavigationState extends Component {
         const {dispatch, nav} = this.props;
         this.index = nav.index;
         // this.currentRouteName = nav.routes[nav.index].routeName;
-        const navigation = navigationPropConstructor(dispatch, nav);
-        return (
+        this._navigation = navigationPropConstructor(
+            dispatch,
+            nav,
+            AppNavigator.router,
+            () => this._navigation
+        );        return (
             <AppNavigator
-                navigation={navigation}
+                navigation={this._navigation}
             />
         );
     }
