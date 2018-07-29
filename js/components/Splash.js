@@ -19,8 +19,7 @@ class Splash extends React.Component {
 
     componentDidMount() {
         // AdMobRewarded.setTestDevices([AdMobRewarded.simulatorId]);
-        // AdMobRewarded.setAdUnitID('ca-app-pub-4533308396777454/6404350424');//ios
-        AdMobRewarded.setAdUnitID('ca-app-pub-4533308396777454/5961557364');//android
+        AdMobRewarded.setAdUnitID('ca-app-pub-3940256099942544/5224354917');
         AdMobRewarded.addEventListener('rewarded',
             (reward) => console.log('AdMobRewarded => rewarded', reward)
         );
@@ -49,8 +48,7 @@ class Splash extends React.Component {
         AdMobRewarded.requestAd().catch(error => console.warn(error));
 
         // AdMobInterstitial.setTestDevices([AdMobInterstitial.simulatorId]);
-        // AdMobInterstitial.setAdUnitID('ca-app-pub-4533308396777454/5688188646');//ios
-        AdMobInterstitial.setAdUnitID('ca-app-pub-4533308396777454/1534516750');//android
+        AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712');
         AdMobInterstitial.addEventListener('adLoaded',
             () => console.log('AdMobInterstitial adLoaded')
         );

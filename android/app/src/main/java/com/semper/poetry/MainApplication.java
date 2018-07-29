@@ -4,7 +4,6 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import com.github.wumke.RNExitApp.RNExitAppPackage;
-import com.google.android.gms.ads.MobileAds;
 import com.sbugert.rnadmob.RNAdMobPackage;
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.facebook.react.ReactNativeHost;
@@ -47,7 +46,6 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
-    MobileAds.initialize(this, "ca-app-pub-4533308396777454~8180139557");
     SoLoader.init(this, /* native exopackage */ false);
   }
 }
