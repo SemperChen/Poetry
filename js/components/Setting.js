@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Picker, ScrollView, Slider, StyleSheet, Text, View} from 'react-native';
 import I18n from '../i18n/i18n';
 
-class Setting extends React.Component{
+class Setting extends Component{
 
     componentWillMount() {
         this.data = this.props.navigation.state.params.data;

@@ -1,11 +1,11 @@
 /**
  * @author Semper
  */
-import React from "react";
+import React, {Component} from 'react';
 import {ActivityIndicator, View} from "react-native";
 import PropTypes from 'prop-types';
 
-class Loading extends React.Component {
+class Loading extends Component {
     constructor() {
         super()
     }

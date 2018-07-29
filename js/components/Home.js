@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Dimensions, FlatList, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {connect} from 'react-redux';
 import {requestContent} from '../actions/content';
 
 const WIDTH = Dimensions.get('window').width;
 
-class Home extends React.Component {
+class Home extends Component {
 
     componentDidMount() {
         this.props.dispatch(requestContent());

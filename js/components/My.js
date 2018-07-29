@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Button, StatusBar, Text, View, StyleSheet, FlatList, Image, Dimensions, TouchableOpacity} from 'react-native';
 import I18n from '../i18n/i18n';
-import {AdMobBanner} from 'react-native-admob';
 import {connect} from 'react-redux';
 import {requestContent} from '../actions/content';
 
 const WIDTH = Dimensions.get('window').width;
 
-class My extends React.Component {
+class My extends Component {
 
     componentDidMount() {
     }

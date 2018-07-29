@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {ScrollView, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import I18n from '../i18n/i18n';
 import {AdMobInterstitial} from 'react-native-admob';
 global.globalFontColor = '#fff';
 global.globalFontSize = 22;
-class Reader extends React.Component {
+class Reader extends Component {
 
     constructor() {
         super();

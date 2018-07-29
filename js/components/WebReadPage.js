@@ -1,12 +1,11 @@
 /**
  * @author Semper
  */
-
-import React from "react";
+import React, {Component} from 'react';
 import {WebView} from "react-native";
 import Loading from './Loading';
 
-class WebReadPage extends React.Component {
+class WebReadPage extends Component {
     static navigationOptions = ({navigation}) => {
         return {
             headerTitle: navigation.state.params.name,

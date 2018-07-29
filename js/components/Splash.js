@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {StatusBar, Text, View, Dimensions} from 'react-native';
 import {NavigationActions, StackActions} from 'react-navigation';
 import I18n from '../i18n/i18n';
@@ -7,7 +7,7 @@ import {AdMobInterstitial,AdMobRewarded} from 'react-native-admob';
 
 const HEIGHT = Dimensions.get('window').height;
 
-class Splash extends React.Component {
+class Splash extends Component {
 
     static navigationOptions = {
         header: null,

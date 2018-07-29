@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Button, ScrollView, TextInput, View} from 'react-native';
 import I18n from '../i18n/i18n';
 import {connect} from 'react-redux';
 import {requestMy} from '../actions/my';
 
-class AddPoetry extends React.Component {
+class AddPoetry extends Component {
     render() {
         return (
             <ScrollView>

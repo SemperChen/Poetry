@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Button, StatusBar, Text, View, StyleSheet} from 'react-native';
 import I18n from '../i18n/i18n';
 import {AdMobBanner} from 'react-native-admob';
 
-class Detail extends React.Component {
+class Detail extends Component {
 
     static navigationOptions = ({navigation}) => {
         return {

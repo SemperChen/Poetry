@@ -1,13 +1,12 @@
 /**
  * @author Semper
  */
-
-import React from 'react';
+import React, {Component} from 'react';
 import {ScrollView, StyleSheet, Text, TouchableOpacity, Alert} from 'react-native';
 import I18n from '../i18n/i18n';
 import {AdMobRewarded} from 'react-native-admob';
 
-class Explore extends React.Component {
+class Explore extends Component {
 
     showRewarded() {
         AdMobRewarded.showAd().catch(error => console.warn(error));
