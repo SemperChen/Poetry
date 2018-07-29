@@ -3,7 +3,7 @@
 ## DownLoad
 [![App Store Button](https://raw.githubusercontent.com/SemperChen/tianxiashuge/master/image/appstore.png "App Store Button")](https://itunes.apple.com/cn/app/poetry/id1390162198?mt=8&ign-mpt=uo%3D4)
 [![Play Store Button](https://raw.githubusercontent.com/SemperChen/tianxiashuge/master/image/googleplay.png "Play Store Button")](https://play.google.com/store/apps/details?id=com.semper.poetry)
-## Features in Detail
+## Dependencies
     "prop-types": "^15.6.1",
     "react": "16.3.1",
     "react-native": "0.55.4",
