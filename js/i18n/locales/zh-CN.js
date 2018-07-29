@@ -22,5 +22,6 @@ export default {
     content:'内容',
     setting:'设置',
     fontSize:'字体大小',
-    backgroundColor:'背景颜色'
+    backgroundColor:'背景颜色',
+    exitAppMsc:'再按一次退出应用'
 };

@@ -7,12 +7,9 @@ import {NavigationActions} from 'react-navigation';
 import {navigationPropConstructor} from './utils/redux';
 import {initializeListeners} from 'react-navigation-redux-helpers/src/middleware';
 import RNExitApp from 'react-native-exit-app';
+import I18n from './i18n/i18n';
 
 class AppWithNavigationState extends Component {
-
-    constructor() {
-        super();
-    }
 
     componentDidMount() {
         initializeListeners('root', this.props.nav);
@@ -31,18 +28,22 @@ class AppWithNavigationState extends Component {
     }
 
     onBackAndroid = () => {
-        if (this.index === 0) {
-            if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
-                RNExitApp.exitApp();
-                // AppRegistry.unmountApplicationComponentAtRootTag(1);
-                return false;
+        try{
+            if (this.index===0) {
+                if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
+                    RNExitApp.exitApp();
+                    // AppRegistry.unmountApplicationComponentAtRootTag(1);
+                    return false;
+                }
+                this.lastBackPressed = Date.now();
+                ToastAndroid.show(I18n.t('exitAppMsc'), ToastAndroid.SHORT);
+                return true;
             }
-            this.lastBackPressed = Date.now();
-            ToastAndroid.show('再按一次退出应用', ToastAndroid.SHORT);
-            return true;
+            this.props.dispatch(NavigationActions.back());
+            return true
+        }catch(e){
+            console.log('AppWithNavigationState onBackAndroid', e.message)
         }
-        this.props.dispatch(NavigationActions.back());
-        return true
     };
 
     render() {

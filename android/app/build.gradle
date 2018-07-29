@@ -150,6 +150,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-exit-app')
     compile project(':react-native-admob')
     compile project(':react-native-i18n')
     compile fileTree(dir: "libs", include: ["*.jar"])

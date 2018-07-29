@@ -23,5 +23,6 @@ export default {
     content:'Content',
     setting:'Setting',
     fontSize:'Font Size',
-    backgroundColor:'Background Color'
+    backgroundColor:'Background Color',
+    exitAppMsc:'Press again to exit the app'
 };

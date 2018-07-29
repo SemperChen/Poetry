@@ -3,6 +3,7 @@ package com.semper.poetry;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.github.wumke.RNExitApp.RNExitAppPackage;
 import com.google.android.gms.ads.MobileAds;
 import com.sbugert.rnadmob.RNAdMobPackage;
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
@@ -26,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNExitAppPackage(),
             new RNAdMobPackage(),
             new RNI18nPackage()
       );
