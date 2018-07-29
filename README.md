@@ -26,7 +26,6 @@
 #### IOS:
 1. run `npm i`.
 2. run `sudo gem install cocoapods`.
-3. run `cd ios`.
-4. run `pod install --repo-update`.
-5. run `react-native run-ios`.
+3. run `cd ios&&pod install --repo-update`.
+4. run `react-native run-ios`.
 
