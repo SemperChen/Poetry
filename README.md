@@ -4,7 +4,7 @@
 [![App Store Button](https://raw.githubusercontent.com/SemperChen/tianxiashuge/master/image/appstore.png "App Store Button")](https://itunes.apple.com/cn/app/poetry/id1390162198?mt=8&ign-mpt=uo%3D4)
 [![Play Store Button](https://raw.githubusercontent.com/SemperChen/tianxiashuge/master/image/googleplay.png "Play Store Button")](https://play.google.com/store/apps/details?id=com.semper.poetry)
 
-[Poetry.apk](https://raw.githubusercontent.com/SemperChen/Poetry/master/image/poetry/poetry.apk)
+[Poetry.apk](https://raw.githubusercontent.com/SemperChen/tianxiashuge/master/image/poetry/poetry.apk)
 ## Features in Detail
 - Google Admob(react native Admob)
 - I18n
