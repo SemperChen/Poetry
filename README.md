@@ -7,7 +7,7 @@
 [Poetry.apk](https://raw.githubusercontent.com/SemperChen/tianxiashuge/master/image/poetry/poetry.apk)
 ## Features in Detail
 - Google Admob(react native Admob)
-- I18n
+- i18n
 ## Dependencies
     "prop-types": "^15.6.1",
     "react": "16.3.1",
